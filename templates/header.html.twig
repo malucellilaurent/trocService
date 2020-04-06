@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="./css/styles.css">
+<div class="navbar" align="center" style="width: 17%; height: 100%; background-color: #2f4578;text-align: center">
+    <div align="center" style="text-align: center">
+        <h3 style="font-family: 'Segoe UI';color: white;">
+            TrocService
+        </h3>
+    </div>
+    <br>
+
+    <div style="background-color: #2f4578; text-align: left ;text-decoration: none ;">
+        <ul class="mr-auto" >
+            <li>
+                <a class="nav-link" href="/users" style="color: white">Utilisateurs</a>
+            </li>
+            <li>
+                <a class="nav-link" href="/" style="color: white">
+                    Trocs
+                </a>
+            </li>
+            {% if is_granted('ROLE_ADMIN') %}
+            <li class="nav-item">
+                <a class="nav-link" href="/admin" style="color: white">Admin</a>
+            </li>
+            {% endif %}
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ul style="margin-bottom: 0px">
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login" style="color: white">Se connecter</a>
+                </li>
+            {% endif %}
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/register" style="color: white">Créer un compte</a>
+                </li>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout" style="color: white">Se déconnecter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true" style="color: white">Vous êtes connecté  {{ app.user.pseudo }}</a>
+                </li>
+            {% endif %}
+        </ul>
+        <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="rechercher" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">rechercher</button>
+        </form> -->
+    </div>
+</div>

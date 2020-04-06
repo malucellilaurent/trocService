@@ -1,0 +1,4 @@
+debug:routereasy_admin_bundle:
+    resource: '@EasyAdminBundle/Controller/EasyAdminController.php'
+    prefix: /admin
+    type: annotation

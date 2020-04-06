@@ -1,0 +1,50 @@
+{% block body %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/styles2.css">
+    <div class="bg" style="text-align: center">
+    <div class="container">
+        <h1 style="padding-top: 5%; margin-left: 0;">Troc Service</h1>
+        <div class="div_centrale">
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                {% if app.user %}
+                    <div class="mb-3">
+                        Vous êtes connecté  {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>,
+                        <a href="{{ path('easyadmin') }}">Acceder à la page d'administration</a>
+                    </div>
+                {% endif %}
+                <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control form_style" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Mot de passe</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control form_style" required>
+                    <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
+                </div>
+                {#        <div class="checkbox mb-3">#}
+                {#            <label>#}
+                {#                <input type="checkbox" name="_remember_me"> Se souvenir de moi#}
+                {#            </label>#}
+                {#        </div>#}
+                <br>
+                <button class="btn btn-lg btn-primary bouton_submit" type="submit">
+                    Se connecter
+                </button>
+
+                {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register"><h5 style="font-size: 15px; text-decoration: none; color: #8d93b1">Créer un compte</h5></a>
+                    </li>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} trocServices {% endblock %}
+
+{% block  body %}
+        <link rel="stylesheet" href="/css/styles2.css">
+        <div style="height: 100%; width: 83%; margin-left: auto; margin-right:0px">
+
+        <div  style="height: 100%;background-color: #8d93b1">
+                <div class="container">
+                        <div class="row align-items-center" style="color: #2f4578">
+                                <div class="col-sm">
+                                        <h3>Service demandé</h3>
+                                </div>
+                                <div class="col-sm">
+                                        <h3>Service proposé</h3>
+                                </div>
+                                <div class="col-sm">
+                                        <h3>Utilisateur</h3>
+                                </div>
+                                <div class="col-sm">
+                                        <h3>Photo</h3>
+                                </div>
+                        </div>
+                        <div class="row align-items-center" style="color: #2f4578">
+                                <div class="col-sm">
+                                        {{ untroc.serviceDemande }}
+                                </div>
+                                <div class="col-sm">
+                                        {{ untroc.servicePropose }}
+                                </div>
+                                <div class="col-sm">
+                                        {% for allusers in untroc.user %}
+                                                {{ allusers.email }}
+                                        {% endfor %}
+                                </div>
+                                <div class="col-sm">
+                                        <img class="img-thumbnail" src="{{ untroc.photo }}" alt="{{ untroc.serviceDemande }}"/>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+
+{% endblock %}

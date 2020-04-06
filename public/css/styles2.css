@@ -1,0 +1,153 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.img-fluid {
+    width: 400px;
+    height: 100px;
+    object-fit: cover;
+    border-radius:10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.bg {
+    background-color: #1d2124;
+    background-image: url("../logoNWAR.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    color: #f7f7f7;
+}
+
+.bg1 {
+    margin-left: 17%;
+    background-color: #1d2124;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 1;
+    color: #f7f7f7;
+}
+
+
+.text-center {
+    padding-top: 10%;
+    color: #2f4578;
+    z-index: 1;
+}
+
+.container-fluid {
+    width: 90%;
+    align-items: center;
+    padding-left: 15%;
+    z-index: 1;
+}
+
+.container{
+    color: #f7f7f7;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    top: 5%;
+    background-color: #000000;
+    opacity: 80%;
+    overflow: hidden;
+    width: 80%;
+    height: 80%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+    border-radius:10px ;
+    z-index: 2;
+}
+
+.container:hover .overlay {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    z-index: 2;
+}
+
+.row{
+    padding-top: 7%;
+}
+
+.text {
+    color: #f7f7f7;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+.users{
+    font-size: 18px;
+    font-weight:bold;
+    color: black;
+
+}
+
+.users2{
+    font-size: 18px;
+    color: #f7f7f7;
+
+}
+
+.navbar {
+    width: 100%;
+    color : white;
+    position:fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.form_style{
+    color:#2f4578;
+    border-radius: 20px;
+    border-width: 2px ;
+    border-color: #2f4578;
+    background-color: #8d93b1;
+    opacity: 70%;
+}
+
+.div_centrale{
+    width: 30%;
+    top: 35%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
+.bouton_submit{
+    border-radius: 20px;
+    color: #8d93b1;
+    background-color: #2f4578;
+    border: none;
+    opacity: 80%;
+}
+
+.format_page{
+    height: 100%;
+    width: 83%;
+    margin-left: auto;
+    margin-right:0px
+}

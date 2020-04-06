@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %} trocServices {% endblock %}
+{% block  body %}
+    <link rel="stylesheet" href="/css/styles2.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <div class="bg1" style="background-color: #8d93b1; color: black">
+        <h1 class="text-center" style="color: #2f4578"> Utilisateurs </h1></br>
+        <div class="container">
+            <table class="table table-striped" >
+                <thead class="users">
+                <tr>
+                    <td>email</td>
+                    <td>pseudo</td>
+                    <td>prenom</td>
+                    <td>nom </td>
+                    <td>trocs </td>
+                </tr>
+                </thead>
+                <tbody class="users2">
+                {% for u in users %}
+                    <tr>
+                        <td>{{ u.email }}</td>
+                        <td>{{ u.pseudo }}</td>
+                        <td>{{ u.name }}</td>
+                        <td>{{ u.surname }}</td>
+                        <td><a class="nav-link" href="{{ path('user', {'id': u.id }) }}"><button class="btn btn-light bouton_submit">afficher trocs</button></a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} trocServices {% endblock %}
+
+{% block  body %}
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles2.css">
+
+    <div class="bg1" style="background-color: #8d93b1; height: 100%; color: #2f4578">
+        <div>
+            <br>
+            <br>
+            <br>
+            Trocs de {{ user.pseudo }} :
+        </div>
+        <div class="container">
+            <div class="row" style="color: #2f4578">
+                <div class="col-sm">
+                    <h3>Service demandé</h3>
+                </div>
+                <div class="col-sm">
+                    <h3>Service proposé</h3>
+                </div>
+                <div class="col-sm">
+                    <h3>Photo</h3>
+                </div>
+            </div>
+            {%  for alltrocs in user.trocs  %}
+                <div class="row align-items-center" style="color: #2f4578">
+                    <div class="col-sm">
+                        {{ alltrocs.serviceDemande }}
+                    </div>
+                    <div class="col-sm">
+                        {{ alltrocs.servicePropose }}
+                    </div>
+                    <div class="col-sm">
+                        <img class="img-thumbnail" src="{{ alltrocs.photo }}" alt="{{ alltrocs.serviceDemande }}"/>
+                    </div>
+                    {#            <div class="col-sm">#}
+                    {#                <input >#}
+                    {#            </div>#}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
